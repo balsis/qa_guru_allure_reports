@@ -4,7 +4,7 @@ from selene import browser, by, be
 
 def test_github_without_report_step():
     browser.open('/')
-    browser.element('.header-search-button').click()
+    browser.element('.search-input').click()
     browser.element('#query-builder-test').send_keys('eroshenkoam/allure-example').press_enter()
     browser.element(by.link_text("eroshenkoam/allure-example")).click()
     browser.element("#issues-tab").click()
@@ -19,7 +19,7 @@ def test_github_with_allure_steps_inside_func():
     with allure.step(f"Открываем главую страницу GitHub"):
         browser.open('/')
     with allure.step("Ищем необходимый репозиторий"):
-        browser.element('.header-search-button').click()
+        browser.element('.search-input').click()
         browser.element('#query-builder-test').send_keys('eroshenkoam/allure-example').press_enter()
     with allure.step("Переходим по ссылке в репозиторий"):
         browser.element(by.link_text("eroshenkoam/allure-example")).click()

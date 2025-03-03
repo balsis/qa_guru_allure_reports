@@ -14,7 +14,7 @@ def init_browser():
                          "AppleWebKit/537.36 (KHTML, like Gecko) "
                          "Chrome/119.0.0.0 Safari/537.36")
     options.add_argument("--window-size=1920,1080")
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     browser.config.base_url = 'https://github.com'
     browser.config.driver_options = options
     yield
